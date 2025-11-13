@@ -1,0 +1,15 @@
+=====================ATM BERSAMA====================
+
+TANGGAL : 13-11-25                        WAKTU : 09:54:52
+NAMA PENGIRIM      : ARI
+NO REK PENIGIRIM   : 111666
+NAMA PENERIMA      : DANI
+NO REK PENERIMA    : 613244
+TRANSFER           : Rp.250000
+SALDO PENGIRIM     : Rp.750000
+SALDO PENERIMA     : Rp.300000
+=====================================================
+                 SIMPAN TANDA TERIMA INI 
+            SEBAGAI BUKTI TRANSAKSI YANG SAH 
+
+

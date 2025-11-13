@@ -1,0 +1,79 @@
+#otentikasi
+import os
+import msvcrt
+from data import data_rekening
+
+def cek_rekening():
+    while True:
+        print("                    MASUKKAN  NOMOR REKENING ANDA\n ")
+        print("------------------------------------------------------------------\n\n")
+        print("                      ENTER YOUR NUMBER CODE\n\n")
+        input_norek=(input("                                ")).strip()
+
+        if not input_norek.isdigit():
+            print("\n\n      MAAF, NOMOR REKENING HANYA BOLEH BERISI ANGKA.  \n")
+            os.system("pause")
+            continue
+
+        for i in data_rekening:
+            if i['nomorRekening']==input_norek:
+                coba_rekening=True
+                return i
+            
+        print("\n\n\n      MAAF NOMOR ANDA TIDAK TERDAFTAR , SILAHKAN ULANGI ")
+        print("\n\n--------------------------------------------------------- ")
+        print("\n\n       YOUR ACCOUNT NUMBER IS NOT REGISTERED. PLEASE REPEAT \n")
+        input("TEKAN ENTER UNTUK MELANJUTKAN")
+        os.system("cls")
+
+
+
+def cek_pin(pemilik):
+    total_coba = 0
+    pin_benar = pemilik['pin']
+
+    while total_coba < 3:
+        os.system("cls")
+        print("\t\t MASUKKAN PIN ATM ANDA\n\n\n\n\n", end="\t\t\t ", flush=True)
+        pin_input = ""
+
+        while True:
+            ch = msvcrt.getch()
+            if ch == b'\r':  # ENTER ditekan
+                break
+            elif ch == b'\x08':  # BACKSPACE ditekan
+                if len(pin_input) > 0:
+                    pin_input = pin_input[:-1]
+                    print('\b \b', end="", flush=True)
+            elif ch.isdigit():  # hanya angka
+                pin_input += ch.decode()
+                print("*", end="", flush=True)
+
+        if len(pin_input) !=6:
+            print("\n\n\n \t\t PIN HARUS 6 DIGIT. SILAHKAN ULANGI LAGI")
+            os.system("pause")
+            continue
+
+        
+        
+
+        # Cek apakah PIN benar
+        if pin_input == pin_benar:
+
+            print(f"\n\n\n\n\n\t\tSELAMAT DATANG, {pemilik['namaPemilik']}.\n")
+            os.system("pause")
+            os.system("cls")
+            return True
+            
+        else:
+            total_coba += 1
+            sisa = 3 - total_coba
+            if sisa > 0:
+                print(f"\n\n\n\n\t\t\tPIN SALAH.\n \t\tPERCOBAAN ANDA SISA {sisa} KALI LAGI.")
+                os.system("pause")
+            else:
+                print("\n\n\n\n\tANDA TELAH SALAH MEMASUKKAN PIN 3 KALI.\n \t\t KARTU ANDA DIBLOKIR.\n")
+                os.system("pause")
+                return False
+            
+

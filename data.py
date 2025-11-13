@@ -1,0 +1,16 @@
+
+
+
+data_rekening = [
+    {"namaPemilik": "ARI", "nomorRekening": "111666", "saldo": 1000000, "pin": "123465"},
+    {"namaPemilik": "BUDI", "nomorRekening": "121626", "saldo": 5000000, "pin": "616289"},
+    {"namaPemilik": "CINDY", "nomorRekening": "123716", "saldo": 600000, "pin": "711197"},
+    {"namaPemilik": "DANI", "nomorRekening": "613244", "saldo": 50000, "pin": "853178"},
+    {"namaPemilik": "EDO", "nomorRekening": "715643", "saldo": 150000, "pin": "312465"},
+    {"namaPemilik": "FARAH", "nomorRekening": "715690", "saldo": 1750000, "pin": "600890"},
+    {"namaPemilik": "GUNTUR", "nomorRekening": "413224", "saldo": 5000000, "pin": "808088"},
+    {"namaPemilik": "HANIF", "nomorRekening": "415672", "saldo": 2500000, "pin": "111011"},
+    {"namaPemilik": "IRFAN", "nomorRekening": "818563", "saldo": 650000, "pin": "123432"},
+    {"namaPemilik": "JEREMY", "nomorRekening": "116588", "saldo": 150000, "pin": "144150"} 
+]
+
