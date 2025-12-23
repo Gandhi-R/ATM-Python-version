@@ -1,16 +1,19 @@
 #ATM SEDERHANA
 
 from auth import cek_rekening, cek_pin
+from data import load_data, save_data
 from transaksi.tarik import tarik_saldo
 from transaksi.transfer import transfer_saldo
 from utils.helper import tanya_lanjutkan
 import os 
 
+def clear():
+    os.system("cls")
 
-def menu_transaksi(pemilik):
+
+def menu_transaksi(pemilik,data_rekening):
     while True:
-        os.system("cls")
-        cek_pin(pemilik)
+        clear()
         
         print("=============================================")
         print("\t\tPILIH TRANSAKSI      ")
@@ -31,20 +34,19 @@ def menu_transaksi(pemilik):
 
         match pilih_transkasi:
             case 1:
-                os.system("cls")
                 print(f"\n\n\t\tSALDO ANDA SAAT INI  : Rp.{pemilik['saldo']}\n")
                 os.system("pause")
                 
 
             case 2:
-                os.system("cls")
                 tarik_saldo(pemilik)
+                save_data(data_rekening)
                 
                 
                 
-            case 3:
-                os.system("cls")
+            case 3: 
                 transfer_saldo(pemilik)
+                save_data(data_rekening)
                         
             
             case 4:
@@ -56,8 +58,6 @@ def menu_transaksi(pemilik):
                 print("\nPILIHAN TIDAK VALID")
                 os.system("pause")
         
-
-        os.system("cls")    
         if not tanya_lanjutkan():
             print("\n\t  ANDA TELAH KELUAR PROGRAM \n\t TERIMA KASIH TELAH MENGGUNAKAN LAYANAN KAMI \n")
             break
@@ -67,11 +67,15 @@ def menu_transaksi(pemilik):
 
 def main():
     os.system("color 1F")
-    os.system("cls")
+    clear()
 
-    pemilik=cek_rekening()
-    os.system("cls")
-
+    data_rekening=load_data()
+    pemilik=cek_rekening(data_rekening)
+    
+    if not cek_pin(pemilik):
+        return
+    
+    clear()
     print("==============================================")
     print("               PILIH BAHASA                   ")
     print("==============================================")
@@ -84,11 +88,11 @@ def main():
     
     except ValueError:
         print("\t INPUT TIDAK VALID. MASUKKAN ANGKA 1 ATAU 2\n")
-        os.system("pause")
+        return
         
 
     if pilih_bahasa==1:
-        menu_transaksi(pemilik)
+        menu_transaksi(pemilik,data_rekening)
     
     elif pilih_bahasa==2:
         os.system("cls")

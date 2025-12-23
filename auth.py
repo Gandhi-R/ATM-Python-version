@@ -1,9 +1,8 @@
 #otentikasi
 import os
 import msvcrt
-from data import data_rekening
 
-def cek_rekening():
+def cek_rekening(data_rekening):
     while True:
         print("                    MASUKKAN  NOMOR REKENING ANDA\n ")
         print("------------------------------------------------------------------\n\n")
