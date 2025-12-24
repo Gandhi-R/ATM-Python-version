@@ -4,7 +4,15 @@ file_data="data.json"
 
 def load_data():
     with open(file_data,"r") as file:
-        return json.load(file)
+        data = json.load(file)
+
+    for rekening in data:
+        if "history" not in rekening:
+            rekening["history"]=[]
+
+    return data
+    
+
 
 
 def save_data(data):

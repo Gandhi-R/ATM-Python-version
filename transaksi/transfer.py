@@ -1,12 +1,14 @@
 
-import os
+from utils.console import clear, enter
+from utils.history import tambah_history
 from cetak_struk import cetak_transfer_saldo
    
 
 def transfer_saldo(pemilik,data_rekening):
     
     while True:
-        os.system("cls")
+        enter()
+        clear()
         print("\n\n          TRANSFER SALDO KE REKENING LAIN\n  \t\tYANG INGIN ANDA TRANSFER\n\n")
         print("\t\t INPUT ANGKA 0 \n \t  UNTUK MEMBATALAKAN TRANSAKSI \n\n")
 
@@ -14,12 +16,12 @@ def transfer_saldo(pemilik,data_rekening):
 
         if not norek_tujuan.isdigit():
             print("\t NOMOR REKENING TUJUAN HANYA BOLEH BERISI ANGKA. \n")
-            os.system("pause")
+            enter()
             continue
         
         if norek_tujuan==pemilik['nomorRekening']:
             print("\n \t MAAF, REKENING TUJUAN TIDAK BOLEH SAMA DENGAN REKENING ANDA. \n")
-            os.system("pause")
+            enter()
             continue
 
         if norek_tujuan=="0":
@@ -35,10 +37,10 @@ def transfer_saldo(pemilik,data_rekening):
 
         if tujuan_akun is None:
             print("\n\t  MAAF, NOMOR REKENING TUJUAN TIDAK DITEMUKAN.\n\t SILAHKAN ULANGI LAGI.\n")
-            os.system("pause")
+            enter()
             continue
 
-        os.system("cls")
+        clear()
         print(f"\n\n    REKNING YANG TERDAFTAR \n\n")
         print(f"    NAMA PEMILIK REKENING   : {tujuan_akun['namaPemilik']}\n\n")
         print(f"    NOMOR REKENING          : {tujuan_akun['nomorRekening']}\n\n")
@@ -50,7 +52,7 @@ def transfer_saldo(pemilik,data_rekening):
 
             except ValueError:
                 print("  INPUT TIDAK VALID. SILAHKAN ULANGI LAGI \n")
-                os.system("pause")
+                enter()
                 continue
                 
     
@@ -61,6 +63,15 @@ def transfer_saldo(pemilik,data_rekening):
                 else:
                     tujuan_akun['saldo']+=nominal
                     pemilik['saldo']-=nominal
+
+                    # History pengirim
+                    tambah_history(pemilik,"Transfer Keluar",nominal,f"Transfer ke {tujuan_akun['namaPemilik']} ({tujuan_akun['nomorRekening']})")
+
+                    # Histroy penerima
+                    tambah_history(tujuan_akun,"Transfer Keluar",nominal,f"Dari {pemilik['namaPemilik']} ({pemilik['nomorRekening']})")
+
+
+
                     print(f"\n    ANDA TELAH TRANSFER SEBESAR Rp.{nominal} KE REKENING {tujuan_akun['namaPemilik']}  \n")                           
                     print(f"    SISA SALDO ANDA SAAT INI Rp.{pemilik['saldo']}   \n\n")
 
@@ -69,13 +80,13 @@ def transfer_saldo(pemilik,data_rekening):
                         cetak_transfer_saldo(pemilik,nominal,tujuan_akun)
                         print("\n   STRUK ANDA SEDANG DICETAK. SILAHKAN AMBIL STRUK ANDA DI NOTEPAD \n")
 
-                        os.system('pause')
-                        os.system("cls")
-                    os.system("cls")
+                        enter()
+                        clear()
+                    clear()
                 break
 
             else:
                 print("\t     MAAF TRANSAKSI TIDAK DAPAT DIPROSES. \n")
-                os.system("pause")
+                enter()
                 break
         break

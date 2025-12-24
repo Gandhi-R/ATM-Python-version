@@ -1,4 +1,5 @@
-import os
+from utils.console import clear, enter
+from utils.history import tambah_history
 from cetak_struk import cetak_hitung_saldo
 
 
@@ -8,14 +9,17 @@ def hitung_tarik_saldo(pemilik,nominal):
         print("\n \tMAAF, SALDO ANDA KURANG. \n ") 
 
     else:
-        os.system("cls")
+        clear()
         pemilik['saldo'] -= nominal
+
+        tambah_history(pemilik,"Tarik Tunai",nominal,"Penarikan tunai ATM")
+
         print(f"\n   ANDA TELAH MENARIK UANG TUNAI SEBESAR Rp.{nominal}\n         SISA SALDO ANDA SEBESAR Rp.{pemilik['saldo']}\n\n")
         pilih=input("   APA ANDA INGIN MENCETAK STRUK TRANSAKSI ANDA ? (Y/N) : ").upper()
         if pilih=="Y":
             cetak_hitung_saldo(pemilik,nominal)
             print("\n   STRUK ANDA SEDANG DICETAK. SILAHKAN AMBIL STRUK ANDA DI NOTEPAD \n")
-        os.system("pause")
+        enter()
 
 
 
@@ -44,20 +48,20 @@ def tarik_saldo(pemilik):
                 nominal = int(input("\t\t\t\t"))
             except ValueError:
                 print("\t     Input tidak valid.")
-                os.system("pause")
+                enter()
                 return
 
             if 50000 <= nominal <= 2500000 or nominal % 50000 == 0:
                 hitung_tarik_saldo(pemilik, nominal)
             else:
                 print("\t     MAAF TRANSAKSI TIDAK DAPAT DIPROSES. \n")
-                os.system("pause")
+                enter()
 
         case 0:
             print("\tANDA KELUAR PROGRAM")
-            os.system("pause")
+            enter()
 
         case _:
-            os.system("cls")
+            clear()
             print("\n\tMASUKKAN ANDA TIDAK VALID!!")
-            os.system("pause")
+            enter()

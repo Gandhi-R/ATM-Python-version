@@ -1,5 +1,6 @@
 #otentikasi
-import os
+
+from utils.console import clear, enter
 import msvcrt
 
 def cek_rekening(data_rekening):
@@ -11,7 +12,7 @@ def cek_rekening(data_rekening):
 
         if not input_norek.isdigit():
             print("\n\n      MAAF, NOMOR REKENING HANYA BOLEH BERISI ANGKA.  \n")
-            os.system("pause")
+            enter()
             continue
 
         for i in data_rekening:
@@ -23,7 +24,7 @@ def cek_rekening(data_rekening):
         print("\n\n--------------------------------------------------------- ")
         print("\n\n       YOUR ACCOUNT NUMBER IS NOT REGISTERED. PLEASE REPEAT \n")
         input("TEKAN ENTER UNTUK MELANJUTKAN")
-        os.system("cls")
+        clear()
 
 
 
@@ -32,7 +33,7 @@ def cek_pin(pemilik):
     pin_benar = pemilik['pin']
 
     while total_coba < 3:
-        os.system("cls")
+        clear
         print("\t\t MASUKKAN PIN ATM ANDA\n\n\n\n\n", end="\t\t\t ", flush=True)
         pin_input = ""
 
@@ -50,7 +51,7 @@ def cek_pin(pemilik):
 
         if len(pin_input) !=6:
             print("\n\n\n \t\t PIN HARUS 6 DIGIT. SILAHKAN ULANGI LAGI")
-            os.system("pause")
+            enter()
             continue
 
         
@@ -60,8 +61,8 @@ def cek_pin(pemilik):
         if pin_input == pin_benar:
 
             print(f"\n\n\n\n\n\t\tSELAMAT DATANG, {pemilik['namaPemilik']}.\n")
-            os.system("pause")
-            os.system("cls")
+            enter()
+            clear()
             return True
             
         else:
@@ -69,10 +70,10 @@ def cek_pin(pemilik):
             sisa = 3 - total_coba
             if sisa > 0:
                 print(f"\n\n\n\n\t\t\tPIN SALAH.\n \t\tPERCOBAAN ANDA SISA {sisa} KALI LAGI.")
-                os.system("pause")
+                enter()
             else:
                 print("\n\n\n\n\tANDA TELAH SALAH MEMASUKKAN PIN 3 KALI.\n \t\t KARTU ANDA DIBLOKIR.\n")
-                os.system("pause")
+                enter()
                 return False
             
 

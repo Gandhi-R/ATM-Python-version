@@ -2,61 +2,85 @@
     {
         "namaPemilik": "ARI",
         "nomorRekening": "111666",
-        "saldo": 800000,
-        "pin": "123465"
+        "saldo": 600000,
+        "pin": "123465",
+        "history": [
+            {
+                "tanggal": "2025-12-24 23:33:54",
+                "jenis": "Transfer Keluar",
+                "nominal": 200000,
+                "keterangan": "Transfer ke IRFAN (818563)"
+            }
+        ]
     },
     {
         "namaPemilik": "BUDI",
         "nomorRekening": "121626",
         "saldo": 5000000,
-        "pin": "616289"
+        "pin": "616289",
+        "history": []
     },
     {
         "namaPemilik": "CINDY",
         "nomorRekening": "123716",
         "saldo": 3100000,
-        "pin": "711197"
+        "pin": "711197",
+        "history": []
     },
     {
         "namaPemilik": "DANI",
         "nomorRekening": "613244",
         "saldo": 100000,
-        "pin": "853178"
+        "pin": "853178",
+        "history": []
     },
     {
         "namaPemilik": "EDO",
         "nomorRekening": "715643",
         "saldo": 1500000,
-        "pin": "312465"
+        "pin": "312465",
+        "history": []
     },
     {
         "namaPemilik": "FARAH",
         "nomorRekening": "715690",
         "saldo": 1750000,
-        "pin": "600890"
+        "pin": "600890",
+        "history": []
     },
     {
         "namaPemilik": "GANDHI",
         "nomorRekening": "413224",
         "saldo": 50000000,
-        "pin": "808088"
+        "pin": "808088",
+        "history": []
     },
     {
         "namaPemilik": "HANIF",
         "nomorRekening": "415672",
         "saldo": 2500000,
-        "pin": "111011"
+        "pin": "111011",
+        "history": []
     },
     {
         "namaPemilik": "IRFAN",
         "nomorRekening": "818563",
-        "saldo": 650000,
-        "pin": "123432"
+        "saldo": 850000,
+        "pin": "123432",
+        "history": [
+            {
+                "tanggal": "2025-12-24 23:33:54",
+                "jenis": "Transfer Keluar",
+                "nominal": 200000,
+                "keterangan": "Dari ARI (111666)"
+            }
+        ]
     },
     {
         "namaPemilik": "JEREMY",
         "nomorRekening": "116588",
         "saldo": 150000,
-        "pin": "144150"
+        "pin": "144150",
+        "history": []
     }
 ]

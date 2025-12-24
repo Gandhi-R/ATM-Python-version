@@ -5,10 +5,7 @@ from data import load_data, save_data
 from transaksi.tarik import tarik_saldo
 from transaksi.transfer import transfer_saldo
 from utils.helper import tanya_lanjutkan
-import os 
-
-def clear():
-    os.system("cls")
+from utils.console import clear, enter, warna
 
 
 def menu_transaksi(pemilik,data_rekening):
@@ -21,21 +18,21 @@ def menu_transaksi(pemilik,data_rekening):
         print("\t\t\t\t1. INFO SALDO \n")
         print("\t\t\t\t2. TARIK TUNAI\n ")
         print("\t\t\t\t3. TRANSFER \n")
-        print("\t\t\t\t4. KELUAR\n")
-
-                
+        print("\t\t\t\t4. RIWAYAT TRANSAKSI\n")
+        print("\t\t\t\t5. KELUAR\n")
+ 
         try:
-            pilih_transkasi=int(input("\t\tMASUKKAN PILIHAN : "))
+            pilih_transaksi=int(input("\t\tMASUKKAN PILIHAN : "))
         except ValueError:
-            print("\tINPUT TIDAK VALID. MASUKKAN ANGKA 1-4 \n")
-            os.system("pause")
+            print("\tINPUT TIDAK VALID. MASUKKAN ANGKA 1-5 \n")
+            enter()
             continue
 
 
-        match pilih_transkasi:
+        match pilih_transaksi:
             case 1:
                 print(f"\n\n\t\tSALDO ANDA SAAT INI  : Rp.{pemilik['saldo']}\n")
-                os.system("pause")
+                enter()
                 
 
             case 2:
@@ -50,27 +47,43 @@ def menu_transaksi(pemilik,data_rekening):
                         
             
             case 4:
+                clear()
+                history=pemilik.get("history",[])
+
+                if not history:
+                    print("\n\nBELUM ADA RIWAYAT TRANSAKSI\n\n")
+                else:
+                    print("\n\tRIWAYAT TRANSAKSI\n")
+                    for i,j in enumerate(history[-5:],start=1):
+                        print(f"{i}. {j['tanggal']}")
+                        print(f"   {j['jenis']} - Rp.{j['nominal']}")
+                        print(f"   {j['keterangan']}\n")
+
+                enter()
+
+            case 5:
                 print("\n\n\n ANDA TELAH KELUAR PROGRAM \n TERIMA KASIH TELAH MENGGUNAKAN LAYANAN KAMI \n\n")
                 break
 
             case _:
                         
                 print("\nPILIHAN TIDAK VALID")
-                os.system("pause")
+                enter()
         
         if not tanya_lanjutkan():
-            print("\n\t  ANDA TELAH KELUAR PROGRAM \n\t TERIMA KASIH TELAH MENGGUNAKAN LAYANAN KAMI \n")
+            print("\n\t\t  ANDA TELAH KELUAR PROGRAM \n\t TERIMA KASIH TELAH MENGGUNAKAN LAYANAN KAMI \n")
             break
 
 
 
 
 def main():
-    os.system("color 1F")
+    warna()
     clear()
 
     data_rekening=load_data()
     pemilik=cek_rekening(data_rekening)
+    clear()
     
     if not cek_pin(pemilik):
         return
@@ -95,7 +108,7 @@ def main():
         menu_transaksi(pemilik,data_rekening)
     
     elif pilih_bahasa==2:
-        os.system("cls")
+        clear()
         print("\n\n\t\tENGLISH VERSION COMING SOON")
     
     else:
