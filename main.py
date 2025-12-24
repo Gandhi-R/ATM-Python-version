@@ -45,7 +45,7 @@ def menu_transaksi(pemilik,data_rekening):
                 
                 
             case 3: 
-                transfer_saldo(pemilik)
+                transfer_saldo(pemilik,data_rekening)
                 save_data(data_rekening)
                         
             

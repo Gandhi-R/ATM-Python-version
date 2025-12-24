@@ -1,10 +1,9 @@
 
 import os
 from cetak_struk import cetak_transfer_saldo
-from data import data_rekening
    
 
-def transfer_saldo(pemilik):
+def transfer_saldo(pemilik,data_rekening):
     
     while True:
         os.system("cls")
