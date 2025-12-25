@@ -13,3 +13,5 @@ def tambah_history(pemilik, jenis, nominal, keterangan=""):
         "keterangan":keterangan
         }
     )
+
+    pemilik["history"]=pemilik["history"][-5:]

@@ -16,7 +16,7 @@ def cetak_hitung_saldo(pemilik,nominal):
         file.write(f"NOMINAL            : Rp.{nominal} \n")
         file.write(f"SISA SALDO         : {pemilik['saldo']}\n\n")
         file.write("======================================================\n")
-        file.write("                    SIMPAN TANDA TERIA INI \n")
+        file.write("                    SIMPAN TANDA TERIMA INI \n")
         file.write("                  SEBAGAAI BUKTI TRANSAKSI YANG SAH ")
 
         os.system("start /min notepad struk_saldo.txt")
