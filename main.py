@@ -53,16 +53,17 @@ def menu_transaksi(pemilik,data_rekening):
                 if not history:
                     print("\n\nBELUM ADA RIWAYAT TRANSAKSI\n\n")
                 else:
-                    print("\n\tRIWAYAT TRANSAKSI\n")
+                    print("\n==============RIWAYAT TRANSAKSI=============\n")
                     for i,j in enumerate(history[-5:],start=1):
                         print(f"{i}. {j['tanggal']}")
-                        print(f"   {j['jenis']} - Rp.{j['nominal']}")
+                        print(f"   {j['jenis']} : Rp.{j['nominal']}")
                         print(f"   {j['keterangan']}\n")
 
+                print("==================================================")
                 enter()
 
             case 5:
-                print("\n\n\n ANDA TELAH KELUAR PROGRAM \n TERIMA KASIH TELAH MENGGUNAKAN LAYANAN KAMI \n\n")
+                print("\n\n\n\t\t ANDA TELAH KELUAR PROGRAM \n TERIMA KASIH TELAH MENGGUNAKAN LAYANAN KAMI \n\n")
                 break
 
             case _:
@@ -88,31 +89,36 @@ def main():
     if not cek_pin(pemilik):
         return
     
-    clear()
-    print("==============================================")
-    print("               PILIH BAHASA                   ")
-    print("==============================================")
-    print("          LANGUAGE PREFERENCES\n\n")
-    print("                                  1. INDONESIA\n")
-    print("                                  2. INGGRIS\n\n")
-
-    try:
-        pilih_bahasa=int(input("         MASUKKAN PILIHAN ANDA : "))
     
-    except ValueError:
-        print("\t INPUT TIDAK VALID. MASUKKAN ANGKA 1 ATAU 2\n")
-        return
-        
-
-    if pilih_bahasa==1:
-        menu_transaksi(pemilik,data_rekening)
-    
-    elif pilih_bahasa==2:
+    while True:
         clear()
-        print("\n\n\t\tENGLISH VERSION COMING SOON")
+
+        print("==============================================")
+        print("               PILIH BAHASA                   ")
+        print("==============================================")
+        print("          LANGUAGE PREFERENCES\n\n")
+        print("                                  1. INDONESIA\n")
+        print("                                  2. INGGRIS\n\n")
+
+        try:
+            pilih_bahasa=int(input("         MASUKKAN PILIHAN ANDA : "))
     
-    else:
-        print("PILIHAN TIDAK VALID")
+        except ValueError:
+            print("\t INPUT TIDAK VALID. MASUKKAN ANGKA 1 ATAU 2\n")
+            continue
+            
+
+        if pilih_bahasa==1:
+            menu_transaksi(pemilik,data_rekening)
+            break
+    
+        elif pilih_bahasa==2:
+            clear()
+            print("\n\n\t\tENGLISH VERSION COMING SOON")
+            break
+    
+        else:
+            print("PILIHAN TIDAK VALID")
                 
 
 if __name__=="__main__":

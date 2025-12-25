@@ -12,7 +12,11 @@ def hitung_tarik_saldo(pemilik,nominal):
         clear()
         pemilik['saldo'] -= nominal
 
-        tambah_history(pemilik,"Tarik Tunai",nominal,"Penarikan tunai ATM")
+        tambah_history(
+            pemilik,
+            "Tarik Tunai",
+            nominal,
+            "Penarikan tunai melalui ATM")
 
         print(f"\n   ANDA TELAH MENARIK UANG TUNAI SEBESAR Rp.{nominal}\n         SISA SALDO ANDA SEBESAR Rp.{pemilik['saldo']}\n\n")
         pilih=input("   APA ANDA INGIN MENCETAK STRUK TRANSAKSI ANDA ? (Y/N) : ").upper()

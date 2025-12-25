@@ -17,7 +17,6 @@ def cek_rekening(data_rekening):
 
         for i in data_rekening:
             if i['nomorRekening']==input_norek:
-                coba_rekening=True
                 return i
             
         print("\n\n\n      MAAF NOMOR ANDA TIDAK TERDAFTAR , SILAHKAN ULANGI ")
