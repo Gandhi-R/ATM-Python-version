@@ -6,6 +6,7 @@ from transaksi.tarik import tarik_saldo
 from transaksi.transfer import transfer_saldo
 from utils.helper import tanya_lanjutkan
 from utils.console import clear, enter, warna
+from utils.history import tampil_history
 
 
 def menu_transaksi(pemilik,data_rekening):
@@ -48,18 +49,7 @@ def menu_transaksi(pemilik,data_rekening):
             
             case 4:
                 clear()
-                history=pemilik.get("history",[])
-
-                if not history:
-                    print("\n\nBELUM ADA RIWAYAT TRANSAKSI\n\n")
-                else:
-                    print("\n==============RIWAYAT TRANSAKSI=============\n")
-                    for i,j in enumerate(history[-5:],start=1):
-                        print(f"{i}. {j['tanggal']}")
-                        print(f"   {j['jenis']} : Rp.{j['nominal']}")
-                        print(f"   {j['keterangan']}\n")
-
-                print("==================================================")
+                tampil_history(pemilik)
                 enter()
 
             case 5:
