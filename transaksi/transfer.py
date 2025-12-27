@@ -67,9 +67,9 @@ def transfer_saldo(pemilik,data_rekening):
                     # History pengirim
                     tambah_history(
                         pemilik,
-                        "Transfer Keluar",
+                        "Transfer",
                         nominal,
-                        f"Ke rekening {tujuan_akun['nomorRekening']}"
+                        f"Ke : {tujuan_akun['namaPemilik']}"
                         )
 
                     # Histroy penerima

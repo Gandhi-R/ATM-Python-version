@@ -23,8 +23,8 @@ def tampil_history(pemilik, limit=5):
     if not history:
         print("\n==============BELUM ADA RIWAYAT TRANSAKSI=========\n")
     else:
-        print("\n==============RIWAYAT TRANSAKSI===============\n")
+        print("\n==============RIWAYAT TRANSAKSI (5 RIWAYAT TERKAHIR)===============\n")
         for i,j in enumerate(history[-5:],start=1):
-            print(f"{i}. {j['tanggal']}")
+            print(f"{i}. [{j['tanggal']}]")
             print(f"   {j['jenis']} : Rp.{j['nominal']}")
             print(f"   {j['keterangan']}\n")

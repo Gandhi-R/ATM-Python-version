@@ -16,7 +16,7 @@ def hitung_tarik_saldo(pemilik,nominal):
             pemilik,
             "Tarik Tunai",
             nominal,
-            "Penarikan tunai melalui ATM")
+            f"Sisa saldo : Rp.{pemilik['saldo']}")
 
         print(f"\n   ANDA TELAH MENARIK UANG TUNAI SEBESAR Rp.{nominal}\n         SISA SALDO ANDA SEBESAR Rp.{pemilik['saldo']}\n\n")
         pilih=input("   APA ANDA INGIN MENCETAK STRUK TRANSAKSI ANDA ? (Y/N) : ").upper()
