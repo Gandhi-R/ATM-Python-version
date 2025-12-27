@@ -32,7 +32,7 @@ def cek_pin(pemilik):
     pin_benar = pemilik['pin']
 
     while total_coba < 3:
-        clear
+        clear()
         print("\t\t MASUKKAN PIN ATM ANDA\n\n\n\n\n", end="\t\t\t ", flush=True)
         pin_input = ""
 
@@ -75,4 +75,96 @@ def cek_pin(pemilik):
                 enter()
                 return False
             
+
+
+            
+def ganti_pin(pemilik):
+    total_coba=0
+    pin_benar=pemilik['pin']
+    while total_coba < 3:
+        clear()
+        print("========================================")
+        print("                GANTI PIN")
+        print("========================================\n")
+        print("\t\t MASUKKAN PIN LAMA\n\n", end="\t\t ", flush=True)
+
+        pin_input = ""
+
+        while True:
+            ch = msvcrt.getch()
+            if ch == b'\r':
+                break
+            elif ch == b'\x08':
+                if len(pin_input) > 0:
+                    pin_input = pin_input[:-1]
+                    print('\b \b', end="", flush=True)
+            elif ch.isdigit():
+                pin_input += ch.decode()
+                print("*", end="", flush=True)
+
+        if len(pin_input) != 6:
+            print("\n\nPIN HARUS 6 DIGIT")
+            enter()
+            continue
+        if pin_input!=pin_benar:
+            total_coba+=1
+            print(f"\tPIN SALAH! SISA PERCOBAAN : {3-total_coba}")
+            enter()
+            continue
+
+        #jika pin lama benar 
+        clear()
+        print("\t\t MASUKKAN PIN BARU\n\n", end="\t\t ", flush=True)
+
+        pin_baru = ""
+
+        while True:
+            ch = msvcrt.getch()
+            if ch == b'\r':
+                break
+            elif ch == b'\x08':
+                if len(pin_baru) > 0:
+                    pin_baru = pin_baru[:-1]
+                    print('\b \b', end="", flush=True)
+            elif ch.isdigit():
+                pin_baru += ch.decode()
+                print("*", end="", flush=True)
+
+        if len(pin_baru)!=6 or pin_baru ==pin_benar:
+            print("\tPIN BARU TIDAK VALID / TIDAK BOLEH SAMA ")
+            enter()
+            continue
+
+
+        #konfirmasi
+        clear()
+        print("\t\t MASUKKAN PIN BARU\n\n", end="\t\t ", flush=True)
+        konfirmasi=""
+
+        while True:
+            ch=msvcrt.getch()
+            if ch==b'\r':
+                break
+            elif ch==b'\x08':
+                if len(konfirmasi)>0:
+                    konfirmasi=konfirmasi[:-1]
+                    print('\b \b', end="", flush=True)
+            elif ch.isdigit():
+                konfirmasi+=ch.decode()
+                print("*",end="",flush=True)
+
+        if konfirmasi!=pin_baru:
+            print("\t KONFIRMASI PPIN TIDAK COCOK")
+            enter()
+            continue
+
+        #JIKA BERHASIL
+        pemilik['pin']=pin_baru
+        print("\tPIN BERHASIL DIRUBAH")
+        enter()
+        return True  
+    
+    print("\n AKUN TERKUNCI KARENA SALAH PIN 3X")
+    enter()
+    return False
 

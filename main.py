@@ -1,6 +1,6 @@
 #ATM SEDERHANA
 
-from auth import cek_rekening, cek_pin
+from auth import cek_rekening, cek_pin, ganti_pin
 from data import load_data, save_data
 from transaksi.tarik import tarik_saldo
 from transaksi.transfer import transfer_saldo
@@ -19,8 +19,9 @@ def menu_transaksi(pemilik,data_rekening):
         print("\t\t\t\t1. INFO SALDO \n")
         print("\t\t\t\t2. TARIK TUNAI\n ")
         print("\t\t\t\t3. TRANSFER \n")
-        print("\t\t\t\t4. RIWAYAT TRANSAKSI\n")
-        print("\t\t\t\t5. KELUAR\n")
+        print("\t\t\t\t4. GANTI PIN \n")
+        print("\t\t\t\t5. RIWAYAT TRANSAKSI\n")
+        print("\t\t\t\t6. KELUAR\n")
  
         try:
             pilih_transaksi=int(input("\t\tMASUKKAN PILIHAN : "))
@@ -46,13 +47,17 @@ def menu_transaksi(pemilik,data_rekening):
                 transfer_saldo(pemilik,data_rekening)
                 save_data(data_rekening)
                         
+            case 4: 
+                ganti_pin(pemilik)
+                save_data(data_rekening)
+                        
             
-            case 4:
+            case 5:
                 clear()
                 tampil_history(pemilik)
                 enter()
 
-            case 5:
+            case 6:
                 print("\n\n\n\t\t ANDA TELAH KELUAR PROGRAM \n TERIMA KASIH TELAH MENGGUNAKAN LAYANAN KAMI \n\n")
                 break
 
