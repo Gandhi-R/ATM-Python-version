@@ -86,7 +86,7 @@ def ganti_pin(pemilik):
         print("========================================")
         print("                GANTI PIN")
         print("========================================\n")
-        print("\t\t MASUKKAN PIN LAMA\n\n", end="\t\t ", flush=True)
+        print("\tMASUKKAN PIN LAMA\n\n", end="\t\t ", flush=True)
 
         pin_input = ""
 
@@ -138,7 +138,7 @@ def ganti_pin(pemilik):
 
         #konfirmasi
         clear()
-        print("\t\t MASUKKAN PIN BARU\n\n", end="\t\t ", flush=True)
+        print("\tMASUKKAN PIN BARU\n\n", end="\t\t ", flush=True)
         konfirmasi=""
 
         while True:
@@ -154,13 +154,13 @@ def ganti_pin(pemilik):
                 print("*",end="",flush=True)
 
         if konfirmasi!=pin_baru:
-            print("\t KONFIRMASI PPIN TIDAK COCOK")
+            print("\t KONFIRMASI PIN TIDAK COCOK")
             enter()
             continue
 
         #JIKA BERHASIL
         pemilik['pin']=pin_baru
-        print("\tPIN BERHASIL DIRUBAH")
+        print("\n\tPIN BERHASIL DIRUBAH")
         enter()
         return True  
     

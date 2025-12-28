@@ -2,7 +2,7 @@
     {
         "namaPemilik": "ARI",
         "nomorRekening": "111666",
-        "saldo": 550000,
+        "saldo": 1500000,
         "pin": "123465",
         "history": [
             {
@@ -16,6 +16,18 @@
                 "jenis": "Tarik Tunai",
                 "nominal": 50000,
                 "keterangan": "Sisa saldo : Rp.550000"
+            },
+            {
+                "tanggal": "2025-12-28          13:14:39",
+                "jenis": "Tarik Tunai",
+                "nominal": 50000,
+                "keterangan": "Sisa saldo : Rp.500000"
+            },
+            {
+                "tanggal": "Tanggal : 2025-12-28          Waktu : 13:18:45",
+                "jenis": "Transfer Masuk",
+                "nominal": 1000000,
+                "keterangan": "Dari GANDHI (413224)"
             }
         ]
     },
@@ -64,7 +76,7 @@
     {
         "namaPemilik": "GANDHI",
         "nomorRekening": "413224",
-        "saldo": 44650000,
+        "saldo": 43650000,
         "pin": "808088",
         "history": [
             {
@@ -78,6 +90,12 @@
                 "jenis": "Transfer Keluar",
                 "nominal": 350000,
                 "keterangan": "Ke rekening 116588"
+            },
+            {
+                "tanggal": "Tanggal : 2025-12-28          Waktu : 13:18:45",
+                "jenis": "Transfer",
+                "nominal": 1000000,
+                "keterangan": "Ke Rekening : ARI"
             }
         ]
     },

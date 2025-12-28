@@ -7,7 +7,7 @@ def tambah_history(pemilik, jenis, nominal, keterangan=""):
 
     pemilik["history"].append(
         {
-        "tanggal":datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "tanggal":datetime.now().strftime("Tanggal : %Y-%m-%d          Waktu : %H:%M:%S"),
         "jenis":jenis,
         "nominal":nominal,
         "keterangan":keterangan

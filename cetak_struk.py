@@ -10,7 +10,7 @@ def cetak_hitung_saldo(pemilik,nominal):
     waktu=sekarang.strftime("%H:%M:%S")
     with open("struk_saldo.txt","w") as file:
         file.write("=====================ATM BERSAMA=====================\n\n")
-        file.write(f"TANGGAL : {tanggal}                       WALKTU : {waktu}\n")
+        file.write(f"TANGGAL : {tanggal}                       WAKTU : {waktu}\n")
         file.write(f"NAMA PEMILIK       : {pemilik['namaPemilik']}\n")
         file.write(f"NO REKENING        : {pemilik['nomorRekening']}\n")
         file.write(f"NOMINAL            : Rp.{nominal} \n")

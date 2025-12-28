@@ -49,7 +49,7 @@ def tarik_saldo(pemilik):
         case 6: 
             print("\n\n           \tNOMINAL PENARIKAN UANG TUNAI\n  \tHARUS KELIPATAN Rp.50.000 DAN MAKSIMAL Rp.2.500.000  \n")
             try:
-                nominal = int(input("\t\t\t\t"))
+                nominal = int(input("\t\t\t  Rp."))
             except ValueError:
                 print("\t     Input tidak valid.")
                 enter()

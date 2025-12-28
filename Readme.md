@@ -64,6 +64,7 @@ ATM/
 ├── data.json              # Penyimpanan data rekening
 ├── cetak_struk.py         # Fungsi cetak struk transaksi
 ├── auth.py                # Cek rekening, PIN, & Ganti pin
+├── .gitignore             # pembersihan repository tetap bersih
 │
 ├── transaksi/
 │   ├── __init__.py

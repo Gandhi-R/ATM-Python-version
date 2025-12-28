@@ -69,7 +69,7 @@ def transfer_saldo(pemilik,data_rekening):
                         pemilik,
                         "Transfer",
                         nominal,
-                        f"Ke : {tujuan_akun['namaPemilik']}"
+                        f"Ke Rekening : {tujuan_akun['namaPemilik']}"
                         )
 
                     # Histroy penerima

@@ -67,6 +67,7 @@ def menu_transaksi(pemilik,data_rekening):
                 enter()
         
         if not tanya_lanjutkan():
+            clear()
             print("\n\t\t  ANDA TELAH KELUAR PROGRAM \n\t TERIMA KASIH TELAH MENGGUNAKAN LAYANAN KAMI \n")
             break
 
