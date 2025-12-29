@@ -26,6 +26,25 @@ def cek_rekening(data_rekening):
         clear()
 
 
+def cek_pin_lemah(pin):
+    pin_lemah = [
+        "000000", "111111", "222222", "333333",
+        "444444", "555555", "666666", "777777",
+        "888888", "999999",
+        "123456", "654321"
+    ]
+
+    if pin in pin_lemah:
+        return True
+
+    if pin in "0123456789":
+        return True
+
+    if len(set(pin)) == 1:
+        return True
+
+    return False
+
 
 def cek_pin(pemilik):
     total_coba = 0
@@ -130,10 +149,22 @@ def ganti_pin(pemilik):
                 pin_baru += ch.decode()
                 print("*", end="", flush=True)
 
-        if len(pin_baru)!=6 or pin_baru ==pin_benar:
-            print("\tPIN BARU TIDAK VALID / TIDAK BOLEH SAMA ")
+            
+        if len(pin_baru) != 6:
+            print("\tPIN HARUS 6 DIGIT")
             enter()
             continue
+
+        if pin_baru == pin_benar:
+            print("\tPIN BARU TIDAK BOLEH SAMA DENGAN PIN LAMA")
+            enter()
+            continue
+
+        if cek_pin_lemah(pin_baru):
+            print("\tPIN TERLALU LEMAH. GUNAKAN KOMBINASI ANGKA YANG LEBIH AMAN")
+            enter()
+            continue
+
 
 
         #konfirmasi
