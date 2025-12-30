@@ -38,18 +38,21 @@ def menu_transaksi(pemilik,data_rekening):
                 
 
             case 2:
-                tarik_saldo(pemilik)
-                save_data(data_rekening)
+                berhasil=tarik_saldo(pemilik)
+                if berhasil:
+                    save_data(data_rekening)
                 
                 
                 
             case 3: 
-                transfer_saldo(pemilik,data_rekening)
-                save_data(data_rekening)
+                berhasil=transfer_saldo(pemilik,data_rekening)
+                if berhasil:
+                    save_data(data_rekening)
                         
             case 4: 
-                ganti_pin(pemilik)
-                save_data(data_rekening)
+                berhasil=ganti_pin(pemilik)
+                if berhasil:
+                    save_data(data_rekening)
                         
             
             case 5:
