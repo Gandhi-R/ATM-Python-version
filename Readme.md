@@ -5,7 +5,6 @@ Proyek ini dirancang dengan konsep modularisasi, di mana setiap fitur utama dipi
 
 Proyek ini cocok sebagai latihan dasar Python, terutama untuk memahami alur program, validasi input, dan pengelolaan data sederhana.
 
-
 ✨ Fitur Utama
 
 🔐 **Autentikasi**
@@ -14,6 +13,7 @@ Validasi nomor rekening pengguna
 Verifikasi PIN sebelum masuk ke menu transaksi
 Pembatasan percobaan PIN (maksimal 3 kali)
 Fitur ganti PIN dengan validasi PIN lama
+Verifikasi PIN baru yang digunakan (Lemah atau Kuat)
 
 
 💳 **Transaksi**
