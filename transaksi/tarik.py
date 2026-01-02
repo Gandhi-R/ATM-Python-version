@@ -52,7 +52,7 @@ def tarik_saldo(pemilik):
                 nominal = int(input("\t\t\t  Rp."))
             except ValueError:
                 print("\t     Input tidak valid.")
-                enter()
+                enter() 
                 return
 
             if 50000 <= nominal <= 2500000 or nominal % 50000 == 0:
