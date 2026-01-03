@@ -13,7 +13,16 @@ Validasi nomor rekening pengguna
 Verifikasi PIN sebelum masuk ke menu transaksi
 Pembatasan percobaan PIN (maksimal 3 kali)
 Fitur ganti PIN dengan validasi PIN lama
-Verifikasi PIN baru yang digunakan (Lemah atau Kuat)
+
+🔒 **Validasi Ganti PIN**
+
+Saat pengguna melakukan perubahan PIN, sistem akan melakukan beberapa validasi:
+- User wajib memasukkan PIN lama dengan benar
+- PIN baru harus terdiri dari 6 digit angka
+- PIN baru tidak boleh sama dengan PIN lama
+- Konfirmasi PIN diperlukan untuk memastikan tidak ada kesalahan input
+- Percobaan ganti PIN dibatasi untuk alasan keamanan
+
 
 
 💳 **Transaksi**
