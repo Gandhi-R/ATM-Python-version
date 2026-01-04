@@ -14,7 +14,7 @@ def menu_transaksi(pemilik,data_rekening):
         clear()
         
         print("=============================================")
-        print("\t\tPILIH TRANSAKSI      ")
+        print("\t\tSELECT TRANSACTION      ")
         print("============================================")
         print("\t\t\t\t1. INFO SALDO \n")
         print("\t\t\t\t2. TARIK TUNAI\n ")
