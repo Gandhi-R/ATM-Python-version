@@ -7,6 +7,7 @@ from transaksi.transfer import transfer_saldo
 from utils.helper import tanya_lanjutkan
 from utils.console import clear, enter, warna
 from utils.history import tampil_history
+from utils.language import TEXT
 
 
 def menu_transaksi(pemilik,data_rekening):
@@ -108,12 +109,14 @@ def main():
             
 
         if pilih_bahasa==1:
+            bahasa="id"
             menu_transaksi(pemilik,data_rekening)
             break
     
         elif pilih_bahasa==2:
             clear()
-            print("\n\n\t\tENGLISH VERSION COMING SOON")
+            bahasa="en"
+            menu_transaksi(pemilik,data_rekening)
             break
     
         else:
