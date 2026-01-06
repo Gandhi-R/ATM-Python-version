@@ -14,7 +14,7 @@ def menu_transaksi(pemilik,data_rekening,bahasa):
     while True:
         clear()
         
-        print("=============================================")
+        print("============================================")
         print(f"\t\t{TEXT[bahasa]['menu_title']} ")
         print("============================================")
         print(f"\t\t\t\t{TEXT[bahasa]['menu_1']} \n")
