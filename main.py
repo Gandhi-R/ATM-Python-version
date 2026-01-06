@@ -10,12 +10,12 @@ from utils.history import tampil_history
 from utils.language import TEXT
 
 
-def menu_transaksi(pemilik,data_rekening):
+def menu_transaksi(pemilik,data_rekening,bahasa):
     while True:
         clear()
         
         print("=============================================")
-        print("\t\tSELECT TRANSACTION      ")
+        print(f"\t\t{TEXT[bahasa]['menu_title']} ")
         print("============================================")
         print("\t\t\t\t1. INFO SALDO \n")
         print("\t\t\t\t2. TARIK TUNAI\n ")
@@ -34,7 +34,9 @@ def menu_transaksi(pemilik,data_rekening):
 
         match pilih_transaksi:
             case 1:
-                print(f"\n\n\t\tSALDO ANDA SAAT INI  : Rp.{pemilik['saldo']}\n")
+                clear()
+                print(f"\n\n\t\t{TEXT[bahasa]['info_saldo']}  : Rp.{pemilik['saldo']}\n")
+                print(f"\n\t {TEXT[bahasa]['press_enter']}")
                 enter()
                 
 
@@ -42,7 +44,6 @@ def menu_transaksi(pemilik,data_rekening):
                 berhasil=tarik_saldo(pemilik)
                 if berhasil:
                     save_data(data_rekening)
-                
                 
                 
             case 3: 
@@ -110,13 +111,13 @@ def main():
 
         if pilih_bahasa==1:
             bahasa="id"
-            menu_transaksi(pemilik,data_rekening)
+            menu_transaksi(pemilik,data_rekening,bahasa)
             break
     
         elif pilih_bahasa==2:
             clear()
             bahasa="en"
-            menu_transaksi(pemilik,data_rekening)
+            menu_transaksi(pemilik,data_rekening,bahasa)
             break
     
         else:
