@@ -17,12 +17,12 @@ def menu_transaksi(pemilik,data_rekening,bahasa):
         print("=============================================")
         print(f"\t\t{TEXT[bahasa]['menu_title']} ")
         print("============================================")
-        print("\t\t\t\t1. INFO SALDO \n")
-        print("\t\t\t\t2. TARIK TUNAI\n ")
-        print("\t\t\t\t3. TRANSFER \n")
-        print("\t\t\t\t4. GANTI PIN \n")
-        print("\t\t\t\t5. RIWAYAT TRANSAKSI\n")
-        print("\t\t\t\t6. KELUAR\n")
+        print(f"\t\t\t\t{TEXT[bahasa]['menu_1']} \n")
+        print(f"\t\t\t\t{TEXT[bahasa]['menu_2']} \n")
+        print(f"\t\t\t\t{TEXT[bahasa]['menu_3']} \n")
+        print(f"\t\t\t\t{TEXT[bahasa]['menu_4']} \n")
+        print(f"\t\t\t\t{TEXT[bahasa]['menu_5']} \n")
+        print(f"\t\t\t\t{TEXT[bahasa]['menu_6']} \n")
  
         try:
             pilih_transaksi=int(input("\t\tMASUKKAN PILIHAN : "))
