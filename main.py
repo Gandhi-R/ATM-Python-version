@@ -25,9 +25,9 @@ def menu_transaksi(pemilik,data_rekening,bahasa):
         print(f"\t\t\t\t{TEXT[bahasa]['menu_6']} \n")
  
         try:
-            pilih_transaksi=int(input("\t\tMASUKKAN PILIHAN : "))
+            pilih_transaksi=int(input(f"\t\t{TEXT[bahasa]['choice']} : "))
         except ValueError:
-            print("\tINPUT TIDAK VALID. MASUKKAN ANGKA 1-5 \n")
+            print(f"\t{TEXT[bahasa]['input_eror']} \n")
             enter()
             continue
 
