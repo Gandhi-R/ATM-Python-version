@@ -1,17 +1,18 @@
 import os
 import datetime
+from utils.language import TEXT
 
 
 
 
-def cetak_hitung_saldo(pemilik,nominal):
+def cetak_hitung_saldo(pemilik,nominal,bahasa):
     sekarang=datetime.datetime.now()
     tanggal=sekarang.strftime("%d-%m-%y")
     waktu=sekarang.strftime("%H:%M:%S")
     with open("struk_saldo.txt","w") as file:
         file.write("=====================ATM BERSAMA=====================\n\n")
-        file.write(f"TANGGAL : {tanggal}                       WAKTU : {waktu}\n")
-        file.write(f"NAMA PEMILIK       : {pemilik['namaPemilik']}\n")
+        file.write(f"{TEXT[bahasa]['tanggal']} : {tanggal}                       WAKTU : {waktu}\n")
+        file.write(f"{TEXT[bahasa]['nama']}      : {pemilik['namaPemilik']}\n")
         file.write(f"NO REKENING        : {pemilik['nomorRekening']}\n")
         file.write(f"NOMINAL            : Rp.{nominal} \n")
         file.write(f"SISA SALDO         : {pemilik['saldo']}\n\n")
@@ -25,7 +26,7 @@ def cetak_hitung_saldo(pemilik,nominal):
  
 
 
-def cetak_transfer_saldo(pemilik,nominal,tujuan):
+def cetak_transfer_saldo(pemilik,nominal,tujuan,lang):
     sekarang=datetime.datetime.now()
     tanggal=sekarang.strftime("%d-%m-%y")
     waktu=sekarang.strftime("%H:%M:%S")

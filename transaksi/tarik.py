@@ -3,7 +3,7 @@ from utils.history import tambah_history
 from cetak_struk import cetak_hitung_saldo
 
 
-def hitung_tarik_saldo(pemilik,nominal):
+def hitung_tarik_saldo(pemilik,nominal,bahasa):
     if pemilik['saldo']<nominal:
 
         print("\n \tMAAF, SALDO ANDA KURANG. \n ") 
@@ -21,13 +21,13 @@ def hitung_tarik_saldo(pemilik,nominal):
         print(f"\n   ANDA TELAH MENARIK UANG TUNAI SEBESAR Rp.{nominal}\n         SISA SALDO ANDA SEBESAR Rp.{pemilik['saldo']}\n\n")
         pilih=input("   APA ANDA INGIN MENCETAK STRUK TRANSAKSI ANDA ? (Y/N) : ").upper()
         if pilih=="Y":
-            cetak_hitung_saldo(pemilik,nominal)
+            cetak_hitung_saldo(pemilik,nominal,bahasa)
             print("\n   STRUK ANDA SEDANG DICETAK. SILAHKAN AMBIL STRUK ANDA DI NOTEPAD \n")
         enter()
 
 
 
-def tarik_saldo(pemilik):
+def tarik_saldo(pemilik,bahasa):
     print("\n\n            \tPILIH NOMINAL PENARIKAN TUNAI      \n\n\n")
     print("\t1. Rp.100.000                          4. Rp.500.000\n")
     print("\t2. Rp.200.000                          5. Rp.1.000.000\n")
@@ -37,15 +37,15 @@ def tarik_saldo(pemilik):
 
     match pilih:
         case 1: 
-            hitung_tarik_saldo(pemilik,100000)
+            hitung_tarik_saldo(pemilik,100000,bahasa)
         case 2: 
-            hitung_tarik_saldo(pemilik,200000)
+            hitung_tarik_saldo(pemilik,200000,bahasa)
         case 3: 
-            hitung_tarik_saldo(pemilik,300000)
+            hitung_tarik_saldo(pemilik,300000,bahasa)
         case 4: 
-            hitung_tarik_saldo(pemilik,500000)
+            hitung_tarik_saldo(pemilik,500000,bahasa)
         case 5: 
-            hitung_tarik_saldo(pemilik,1000000)
+            hitung_tarik_saldo(pemilik,1000000,bahasa)
         case 6: 
             print("\n\n           \tNOMINAL PENARIKAN UANG TUNAI\n  \tHARUS KELIPATAN Rp.50.000 DAN MAKSIMAL Rp.2.500.000  \n")
             try:
@@ -56,7 +56,7 @@ def tarik_saldo(pemilik):
                 return
 
             if 50000 <= nominal <= 2500000 or nominal % 50000 == 0:
-                hitung_tarik_saldo(pemilik, nominal)
+                hitung_tarik_saldo(pemilik, nominal,bahasa)
             else:
                 print("\t     MAAF TRANSAKSI TIDAK DAPAT DIPROSES. \n")
                 enter()

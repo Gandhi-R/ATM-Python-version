@@ -41,13 +41,13 @@ def menu_transaksi(pemilik,data_rekening,bahasa):
                 
 
             case 2:
-                berhasil=tarik_saldo(pemilik)
+                berhasil=tarik_saldo(pemilik,bahasa)
                 if berhasil:
                     save_data(data_rekening)
                 
                 
             case 3: 
-                berhasil=transfer_saldo(pemilik,data_rekening)
+                berhasil=transfer_saldo(pemilik,data_rekening,bahasa)
                 if berhasil:
                     save_data(data_rekening)
                         
@@ -63,17 +63,17 @@ def menu_transaksi(pemilik,data_rekening,bahasa):
                 enter()
 
             case 6:
-                print("\n\n\n\t\t ANDA TELAH KELUAR PROGRAM \n TERIMA KASIH TELAH MENGGUNAKAN LAYANAN KAMI \n\n")
+                print(f"\n\n\n\t\t {TEXT[bahasa['out']]} \n\n")
                 break
 
             case _:
                         
-                print("\nPILIHAN TIDAK VALID")
+                print(f"\n{TEXT[bahasa]["invalid_input"]}")
                 enter()
         
         if not tanya_lanjutkan():
             clear()
-            print("\n\t\t  ANDA TELAH KELUAR PROGRAM \n\t TERIMA KASIH TELAH MENGGUNAKAN LAYANAN KAMI \n")
+            print(f"\n\t\t  {TEXT[bahasa['out']]}\n")
             break
 
 
@@ -105,7 +105,7 @@ def main():
             pilih_bahasa=int(input("         MASUKKAN PILIHAN ANDA : "))
     
         except ValueError:
-            print("\t INPUT TIDAK VALID. MASUKKAN ANGKA 1 ATAU 2\n")
+            print(F"\n{TEXT[bahasa]["invalid_input"]}")
             continue
             
 
@@ -121,7 +121,7 @@ def main():
             break
     
         else:
-            print("PILIHAN TIDAK VALID")
+            print(F"\n{TEXT[bahasa]["invalid_input"]}")
                 
 
 if __name__=="__main__":
