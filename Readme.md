@@ -113,7 +113,7 @@ Proyek Mini ATM Python ini dibuat sebagai latihan dan pembelajaran, dengan tujua
 
 🚀 **Rencana Pengembangan**
 
-- Versi bahasa Inggris penuh
+- Versi bahasa Inggris penuh (dalam proses)
 - Penyimpanan data berbasis database
 - Mode admin untuk manajemen rekening
 - export riwayat transaksi ke file.txt

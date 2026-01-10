@@ -56,7 +56,7 @@ def tarik_saldo(pemilik,bahasa):
                 enter() 
                 return
 
-            if 50000 <= nominal <= 2500000 or nominal % 50000 == 0:
+            if 50000 <= nominal <= 2500000 and nominal % 50000 == 0:
                 hitung_tarik_saldo(pemilik, nominal,bahasa)
             else:
                 print(f"\t\t{TEXT[bahasa]['nota_proses']}\n")
