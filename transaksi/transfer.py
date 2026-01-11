@@ -2,9 +2,10 @@
 from utils.console import clear, enter
 from utils.history import tambah_history
 from cetak_struk import cetak_transfer_saldo
+from utils.language import TEXT
    
 
-def transfer_saldo(pemilik,data_rekening):
+def transfer_saldo(pemilik,data_rekening,bahasa):
     
     while True:
         enter()

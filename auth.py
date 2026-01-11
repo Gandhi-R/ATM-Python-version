@@ -52,7 +52,7 @@ def cek_pin(pemilik):
 
     while total_coba < 3:
         clear()
-        print("\t\t MASUKKAN PIN ATM ANDA\n\n\n\n\n", end="\t\t\t ", flush=True)
+        print("\t\t MASUKKAN PIN ATM ANDA\n\t======================================\n\t\t     ENTER YOUR PIN\n\n\n\n", end="\t\t\t ", flush=True)
         pin_input = ""
 
         while True:
@@ -69,6 +69,8 @@ def cek_pin(pemilik):
 
         if len(pin_input) !=6:
             print("\n\n\n \t\t PIN HARUS 6 DIGIT. SILAHKAN ULANGI LAGI")
+            print("======================================================")
+            print("\n\n\n \t\t PIN MUST BE 6 DIGITS. PLEASE REPEAT AGAIN")
             enter()
             continue
 
