@@ -10,23 +10,23 @@ def transfer_saldo(pemilik,data_rekening,bahasa):
     while True:
         enter()
         clear()
-        print("\n\n          TRANSFER SALDO KE REKENING LAIN\n  \t\tYANG INGIN ANDA TRANSFER\n\n")
-        print("\t\t INPUT ANGKA 0 \n \t  UNTUK MEMBATALAKAN TRANSAKSI \n\n")
+        print(f"\n\n          {TEXT[bahasa]['deskrip_transfer']}\n\n")
+        print(f"\t\t {TEXT[bahasa]['cancel_transfer']} \n\n")
 
-        norek_tujuan=input("\t MASUKKAN NOMOR REKENING TUJUAN :  ")
+        norek_tujuan=input(f"\t {TEXT[bahasa]['input_transfer']} :  ")
 
         if not norek_tujuan.isdigit():
-            print("\t NOMOR REKENING TUJUAN HANYA BOLEH BERISI ANGKA. \n")
+            print(f"\t {TEXT[bahasa]['wrong_destination']} \n")
             enter()
             continue
         
         if norek_tujuan==pemilik['nomorRekening']:
-            print("\n \t MAAF, REKENING TUJUAN TIDAK BOLEH SAMA DENGAN REKENING ANDA. \n")
+            print(f"\n \t {TEXT[bahasa]['same_number']} \n")
             enter()
             continue
 
         if norek_tujuan=="0":
-            print("\tANDA KELUAR PROGRAM")
+            print(f"\t{TEXT[bahasa]['out_destination']}")
             break
         
 
@@ -37,29 +37,29 @@ def transfer_saldo(pemilik,data_rekening,bahasa):
                 break
 
         if tujuan_akun is None:
-            print("\n\t  MAAF, NOMOR REKENING TUJUAN TIDAK DITEMUKAN.\n\t SILAHKAN ULANGI LAGI.\n")
+            print(f"\n\t  {TEXT[bahasa]['none_number']}\n")
             enter()
             continue
 
         clear()
-        print(f"\n\n    REKNING YANG TERDAFTAR \n\n")
-        print(f"    NAMA PEMILIK REKENING   : {tujuan_akun['namaPemilik']}\n\n")
-        print(f"    NOMOR REKENING          : {tujuan_akun['nomorRekening']}\n\n")
+        print(f"\n\n    {TEXT[bahasa]['terdaftar']} \n\n")
+        print(f"    {TEXT[bahasa]['name']}   : {tujuan_akun['namaPemilik']}\n\n")
+        print(f"    {TEXT[bahasa]['number']}         : {tujuan_akun['nomorRekening']}\n\n")
 
         while True:
-            print("\n\n   \t\tNOMINAL PENTRANSFERAN UANG TUNAI\n \t\t HARUS KELIPATAN Rp.50.000 \n\t\t DAN MAKSIMAL Rp.2.500.000  \n")
+            print(f"\n\n   \t\t{TEXT[bahasa]['deskrip_nominal']}  \n")
             try:
-                nominal=int(input("     MASUKKAN NOMINAL YANG INGIN ANDA TRANSFER : Rp."))
+                nominal=int(input(f"     {TEXT[bahasa]['input_nominal']}"))
 
             except ValueError:
-                print("  INPUT TIDAK VALID. SILAHKAN ULANGI LAGI \n")
+                print(f"  {TEXT[bahasa]['repeat_input']} \n")
                 enter()
                 continue
                 
     
             if 50000 <=nominal<=2500000 and nominal%50000==0:
                 if pemilik['saldo']<nominal:
-                    print("\n \tMAAF, SALDO ANDA KURANG \n")
+                    print(f"\n \t{TEXT[bahasa]['low_saldo']}\n")
 
                 else:
                     tujuan_akun['saldo']+=nominal
@@ -83,13 +83,13 @@ def transfer_saldo(pemilik,data_rekening,bahasa):
 
 
 
-                    print(f"\n    ANDA TELAH TRANSFER SEBESAR Rp.{nominal} KE REKENING {tujuan_akun['namaPemilik']}  \n")                           
-                    print(f"    SISA SALDO ANDA SAAT INI Rp.{pemilik['saldo']}   \n\n")
+                    print(f"\n    {TEXT[bahasa]['succes1']}{nominal} {TEXT[bahasa]['succes2']} {tujuan_akun['namaPemilik']}  \n")                           
+                    print(f"    {TEXT[bahasa]['remainingr']}{pemilik['saldo']}   \n\n")
 
-                    pilih=input("     APA ANDA INGIN MENCETAK STRUK TRANSAKSI ANDA ? (Y/N) : ").upper()
+                    pilih=input(f"     {TEXT[bahasa]['print_struk']} ").upper()
                     if pilih=="Y":
                         cetak_transfer_saldo(pemilik,nominal,tujuan_akun)
-                        print("\n   STRUK ANDA SEDANG DICETAK. SILAHKAN AMBIL STRUK ANDA DI NOTEPAD \n")
+                        print(f"\n   {TEXT[bahasa]['print_succes']} \n")
 
                         enter()
                         clear()
@@ -97,7 +97,7 @@ def transfer_saldo(pemilik,data_rekening,bahasa):
                 break
 
             else:
-                print("\t     MAAF TRANSAKSI TIDAK DAPAT DIPROSES. \n")
+                print(f"\t    {TEXT[bahasa]['false_transaction']} \n")
                 enter()
                 break
         break
