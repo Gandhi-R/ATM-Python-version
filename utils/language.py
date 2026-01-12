@@ -52,7 +52,20 @@ TEXT = {
         "print_struk":"APA ANDA INGIN MENCETAK STRUK TRANSAKSI ANDA ? (Y/N) :",
         "print_succes":"STRUK ANDA SEDANG DICETAK. SILAHKAN AMBIL STRUK ANDA DI NOTEPAD",
         "false_transaction":"MAAF TRANSAKSI TIDAK DAPAT DIPROSES.",
-        
+
+
+        #ganti pin
+        "ganti":"GANTI PIN",
+        "input_pin":"MASUKKAN PIN LAMA",
+        "min6":"PIN HARUS 6 DIGIT", 
+        "if_salah":"PIN SALAH! SISA PERCOBAAN",
+        "pin_baru":"MASUKKAN PIN BARU",
+        "pin_sama":"PIN BARU TIDAK BOLEH SAMA DENGAN PIN LAMA",
+        "pin_lemah":"PIN TERLALU LEMAH. GUNAKAN KOMBINASI ANGKA YANG LEBIH AMAN",
+        "pin_konfir":"KONFIRMASI PIN BARU",
+        "not_cocok":"KONFIRMASI PIN TIDAK COCOK",
+        "true_pin":"PIN BERHASIL DIRUBAH",
+        "blok_pin":"AKUN TERKUNCI KARENA SALAH PIN 3X",
        
         
 
@@ -117,6 +130,18 @@ TEXT = {
         "print_succes":"YOUR REQUEST IS BEING PRINTED. PLEASE TAKE YOUR RECEIPT IN A NOTEPAD",
         "false_transaction":"SORRY, THE TRANSACTION CANNOT BE PROCESSED.",
 
+        #ganti pin
+        "ganti":"CHANGE PIN",   
+        "input_pin":"ENTER OLD PIN",                       
+        "min6":"PIN MUST BE 6 DIGITS",       
+        "if_salah":"WRONG PIN! THE REST OF THE EXPERIMENT",    
+        "pin_baru":"ENTER NEW PIN",  
+        "pin_sama":"THE NEW PIN MUST NOT BE THE SAME AS THE OLD PIN",
+        "pin_lemah":"PIN TOO WEAK. USE A SAFER COMBINATION OF NUMBERS",
+        "pin_konfir":"CONFIRM NEW PIN",
+        "not_cocok":"CONFIRM PIN DOES NOT MATCH",
+        "true_pin":"PIN CHANGED SUCCESSFULLY",
+        "blok_pin":"ACCOUNT LOCKED DUE TO WRONG PIN 3X",
 
         #cetak_struk
         "tanggal":"DATE",

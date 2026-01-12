@@ -52,7 +52,7 @@ def menu_transaksi(pemilik,data_rekening,bahasa):
                     save_data(data_rekening)
                         
             case 4: 
-                berhasil=ganti_pin(pemilik)
+                berhasil=ganti_pin(pemilik,bahasa)
                 if berhasil:
                     save_data(data_rekening)
                         
