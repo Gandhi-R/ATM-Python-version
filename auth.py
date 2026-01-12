@@ -1,6 +1,7 @@
 #otentikasi
 
 from utils.console import clear, enter
+from utils.language import TEXT
 import msvcrt
 
 def cek_rekening(data_rekening):
@@ -99,15 +100,15 @@ def cek_pin(pemilik):
 
 
             
-def ganti_pin(pemilik):
+def ganti_pin(pemilik,bahasa):
     total_coba=0
     pin_benar=pemilik['pin']
     while total_coba < 3:
         clear()
         print("========================================")
-        print("                GANTI PIN")
+        print(f"                {TEXT[bahasa]['ganti']}")
         print("========================================\n")
-        print("\tMASUKKAN PIN LAMA\n\n", end="\t\t ", flush=True)
+        print(f"\t   {TEXT[bahasa]['input_pin']}\n\n", end="\t\t ", flush=True)
 
         pin_input = ""
 
@@ -124,18 +125,18 @@ def ganti_pin(pemilik):
                 print("*", end="", flush=True)
 
         if len(pin_input) != 6:
-            print("\n\nPIN HARUS 6 DIGIT")
+            print(f"\n\n{TEXT[bahasa]['min6']}")
             enter()
             continue
         if pin_input!=pin_benar:
             total_coba+=1
-            print(f"\tPIN SALAH! SISA PERCOBAAN : {3-total_coba}")
+            print(f"\t{TEXT[bahasa]['if_salah']} : {3-total_coba}")
             enter()
             continue
 
         #jika pin lama benar 
         clear()
-        print("\t\t MASUKKAN PIN BARU\n\n", end="\t\t ", flush=True)
+        print(f"\t\t {TEXT[bahasa]['pin_baru']}\n\n", end="\t\t ", flush=True)
 
         pin_baru = ""
 
@@ -153,17 +154,17 @@ def ganti_pin(pemilik):
 
             
         if len(pin_baru) != 6:
-            print("\tPIN HARUS 6 DIGIT")
+            print(f"\t{TEXT[bahasa]['min6']}")
             enter()
             continue
 
         if pin_baru == pin_benar:
-            print("\tPIN BARU TIDAK BOLEH SAMA DENGAN PIN LAMA")
+            print(f"\t{TEXT[bahasa]['pin_sama']}")
             enter()
             continue
 
         if cek_pin_lemah(pin_baru):
-            print("\tPIN TERLALU LEMAH. GUNAKAN KOMBINASI ANGKA YANG LEBIH AMAN")
+            print(f"\t{TEXT[bahasa]['pin_lemah']}")
             enter()
             continue
 
@@ -171,7 +172,7 @@ def ganti_pin(pemilik):
 
         #konfirmasi
         clear()
-        print("\tMASUKKAN PIN BARU\n\n", end="\t\t ", flush=True)
+        print(f"\t{TEXT[bahasa]['pin_konfir']}\n\n", end="\t\t ", flush=True)
         konfirmasi=""
 
         while True:
@@ -187,17 +188,17 @@ def ganti_pin(pemilik):
                 print("*",end="",flush=True)
 
         if konfirmasi!=pin_baru:
-            print("\t KONFIRMASI PIN TIDAK COCOK")
+            print(f"\t {TEXT[bahasa]['not_cocok']}")
             enter()
             continue
 
         #JIKA BERHASIL
         pemilik['pin']=pin_baru
-        print("\n\tPIN BERHASIL DIRUBAH")
+        print(f"\n\t{TEXT[bahasa]['true_pin']}")
         enter()
         return True  
     
-    print("\n AKUN TERKUNCI KARENA SALAH PIN 3X")
+    print(f"\n {TEXT[bahasa]['blok_pin']}")
     enter()
     return False
 
