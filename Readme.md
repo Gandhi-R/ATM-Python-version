@@ -28,23 +28,18 @@ Saat pengguna melakukan perubahan PIN, sistem akan melakukan beberapa validasi:
 💳 **Transaksi**
 
 - Cek saldo
-Menampilkan saldo terakhir dari rekening pengguna
-
+    Menampilkan saldo terakhir dari rekening pengguna
 - Tarik tunai
-Mengurangi saldo dan mencetak struk transaksi ke file .txt
-
+    Mengurangi saldo dan mencetak struk transaksi ke file .txt
 - Transfer saldo
-Mengirim saldo ke rekening lain yang terdaftar dalam sistem
+    Mengirim saldo ke rekening lain yang terdaftar dalam sistem
 
 
 🧾 **Riwayat Transaksi**
 
 - Menyimpan riwayat transaksi (tarik tunai, transfer, ganti PIN)
-
 - Riwayat disimpan langsung ke file JSON
-
 - Menampilkan maksimal 5 transaksi terakhir
-
 - Riwayat tetap tersimpan meskipun program ditutup
 
 
