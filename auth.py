@@ -109,7 +109,6 @@ def ganti_pin(pemilik,bahasa):
         print(f"                {TEXT[bahasa]['ganti']}")
         print("========================================\n")
         print(f"\t   {TEXT[bahasa]['input_pin']}\n\n", end="\t\t ", flush=True)
-
         pin_input = ""
 
         while True:

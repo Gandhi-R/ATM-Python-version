@@ -50,7 +50,7 @@ Mengirim saldo ke rekening lain yang terdaftar dalam sistem
 
 ➕ **Fitur Tambahan**
 
-- Pilihan bahasa (Indonesia / English – English coming soon)
+- Dynamic multi-language support (easily switch languages)
 - Konfirmasi lanjutkan transaksi setelah setiap operasi
 - Tampilan terminal bersih dan berwarna
 - Penyimpanan data menggunakan file JSON
@@ -113,7 +113,6 @@ Proyek Mini ATM Python ini dibuat sebagai latihan dan pembelajaran, dengan tujua
 
 🚀 **Rencana Pengembangan**
 
-- Versi bahasa Inggris penuh (dalam proses)
 - Penyimpanan data berbasis database
 - Mode admin untuk manajemen rekening
 - export riwayat transaksi ke file.txt

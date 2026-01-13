@@ -17,7 +17,6 @@ def transfer_saldo(pemilik,data_rekening,bahasa):
 
         if not norek_tujuan.isdigit():
             print(f"\t {TEXT[bahasa]['wrong_destination']} \n")
-            enter()
             continue
         
         if norek_tujuan==pemilik['nomorRekening']:
