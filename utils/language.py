@@ -72,6 +72,11 @@ TEXT = {
         #cetak struk
         "tanggal":"TANGGAL",
         "nama":"NAMA PEMILIK",
+        "no_rekening":"NO REKENING",
+        "tarik":"JUMLAH",
+        "sisa":"SISA SALDO",
+        "deskrip_1":"SIMPAN TANDA TERIMA INI",
+        "deskrip_2":"SEBAGAI BUKTI TRANSAKSI YANG SAH",
 
     },
 
@@ -143,9 +148,14 @@ TEXT = {
         "true_pin":"PIN CHANGED SUCCESSFULLY",
         "blok_pin":"ACCOUNT LOCKED DUE TO WRONG PIN 3X",
 
-        #cetak_struk
+        #cetak_tarik_struk
         "tanggal":"DATE",
         "nama":"OWNER'S NAME : ",
+        "sisa":"REMAINING BALANCE",
+        "tarik":"AMMOUNT",
+        "no_rekening":"ACCOUNT NUMBER",
+        "deskrip_1":"SAVE THIS RECEIPT",
+        "deskrip_2":"AS LEGITIMATE EVIDENCE",
     
     }
 }

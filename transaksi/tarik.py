@@ -1,6 +1,6 @@
 from utils.console import clear, enter
 from utils.history import tambah_history
-from cetak_struk import cetak_hitung_saldo
+from cetak_struk import cetak_tarik_saldo
 from utils.language import TEXT
 
 
@@ -22,7 +22,7 @@ def hitung_tarik_saldo(pemilik,nominal,bahasa):
         print(f"\n\t{TEXT[bahasa]['inpo_saldo']} Rp.{nominal}\n         {TEXT[bahasa]['sisa']} Rp.{pemilik['saldo']}\n\n")
         pilih=input(f"   {TEXT[bahasa]['struk']} (Y/N) : ").upper()
         if pilih=="Y":
-            cetak_hitung_saldo(pemilik,nominal,bahasa)
+            cetak_tarik_saldo(pemilik,nominal,bahasa)
             print(f"\n   {TEXT[bahasa]['valid_saldo']} \n")
         enter()
 
