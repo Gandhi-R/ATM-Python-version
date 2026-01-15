@@ -8,7 +8,7 @@ TEXT = {
         "menu_4": "4. GANTI PIN",
         "menu_5": "5. RIWAYAT TRANSAKSI",
         "menu_6": "6. KELUAR",
-        "out":"ANDA TELAH KELUAR PROGRAM \n TERIMA KASIH TELAH MENGGUNAKAN LAYANAN KAMI",
+        "out":"ANDA TELAH KELUAR PROGRAM \n\t   TERIMA KASIH TELAH MENGGUNAKAN LAYANAN KAMI",
         "choice":"MASUKKAN PILIHAN ANDA",
         "input_eror":"INPUT TIDAK VALID. MASUKKAN ANGKA 1-5",
         "invalid_input":"PILIHAN TIDAK VALID",
@@ -69,14 +69,25 @@ TEXT = {
        
         
 
-        #cetak struk
+        #cetak tarik saldo
         "tanggal":"TANGGAL",
+        "waktu":"WAKTU",
         "nama":"NAMA PEMILIK",
         "no_rekening":"NO REKENING",
         "tarik":"JUMLAH",
         "sisa":"SISA SALDO",
         "deskrip_1":"SIMPAN TANDA TERIMA INI",
         "deskrip_2":"SEBAGAI BUKTI TRANSAKSI YANG SAH",
+
+        #cetak transfer saldo
+        "pemilik":"NAMA PEMILIK",
+        "no_pengirim":"NO REKENING PENGIRIM",
+        "penerima":"NAMA PENERIMA",
+        "no_penerima":"NO REKENING PENERIMA",
+        "tf":"JUMLAH",
+        "saldo_pener":"SALDO PENGIRIM",
+        "saldo_pengi":"SALDO PENERIMA",
+
 
     },
 
@@ -148,14 +159,25 @@ TEXT = {
         "true_pin":"PIN CHANGED SUCCESSFULLY",
         "blok_pin":"ACCOUNT LOCKED DUE TO WRONG PIN 3X",
 
-        #cetak_tarik_struk
+        #cetak_tarik_saldo
         "tanggal":"DATE",
-        "nama":"OWNER'S NAME : ",
+        "waktu":"TIME",
+        "nama":"OWNER'S NAME",
         "sisa":"REMAINING BALANCE",
         "tarik":"AMMOUNT",
         "no_rekening":"ACCOUNT NUMBER",
         "deskrip_1":"SAVE THIS RECEIPT",
         "deskrip_2":"AS LEGITIMATE EVIDENCE",
+
+        #cetak transfer saldo
+        "pemilik":"OWNER'S NAME",
+        "no_pengirim":"SENDER'S ACCOUNT NUMBER",
+        "penerima":"RECIPIENT'S NAME",
+        "no_penerima":"RECIPIENT'S ACCOUNT NUMBER",
+        "tf":"TRANSFER",
+        "saldo_pener":"SENDER BALANCE",
+        "saldo_pengi":"RECIPIENT BALANCE",
+
     
     }
 }

@@ -2,7 +2,7 @@
     {
         "namaPemilik": "ARI",
         "nomorRekening": "111666",
-        "saldo": 1500000,
+        "saldo": 1400000,
         "pin": "123465",
         "history": [
             {
@@ -28,6 +28,12 @@
                 "jenis": "Transfer Masuk",
                 "nominal": 1000000,
                 "keterangan": "Dari GANDHI (413224)"
+            },
+            {
+                "tanggal": "Tanggal : 2026-01-14          Waktu : 22:59:34",
+                "jenis": "Tarik Tunai",
+                "nominal": 100000,
+                "keterangan": "Sisa saldo : Rp.1400000"
             }
         ]
     },

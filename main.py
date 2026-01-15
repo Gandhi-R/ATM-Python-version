@@ -63,7 +63,7 @@ def menu_transaksi(pemilik,data_rekening,bahasa):
                 enter()
 
             case 6:
-                print(f"\n\n\n\t\t {TEXT[bahasa['out']]} \n\n")
+                print(f"\n\n\n\t\t {TEXT[bahasa]['out']} \n\n")
                 break
 
             case _:
@@ -73,7 +73,7 @@ def menu_transaksi(pemilik,data_rekening,bahasa):
         
         if not tanya_lanjutkan():
             clear()
-            print(f"\n\t\t  {TEXT[bahasa['out']]}\n")
+            print(f"\n\t\t  {TEXT[bahasa]['out']}\n")
             break
 
 

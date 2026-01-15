@@ -10,7 +10,6 @@ def hitung_tarik_saldo(pemilik,nominal,bahasa):
         print(f"\n\t\n{TEXT[bahasa]['min_saldo']} ") 
 
     else:
-        clear()
         pemilik['saldo'] -= nominal
 
         tambah_history(
@@ -39,14 +38,19 @@ def tarik_saldo(pemilik,bahasa):
     match pilih:
         case 1: 
             hitung_tarik_saldo(pemilik,100000,bahasa)
+            return True
         case 2: 
             hitung_tarik_saldo(pemilik,200000,bahasa)
+            return True
         case 3: 
             hitung_tarik_saldo(pemilik,300000,bahasa)
+            return True
         case 4: 
             hitung_tarik_saldo(pemilik,500000,bahasa)
+            return True
         case 5: 
             hitung_tarik_saldo(pemilik,1000000,bahasa)
+            return True
         case 6: 
             print(f"\n\n\t\t{TEXT[bahasa]['note_tarik']} \n")
             try:
@@ -58,12 +62,14 @@ def tarik_saldo(pemilik,bahasa):
 
             if 50000 <= nominal <= 2500000 and nominal % 50000 == 0:
                 hitung_tarik_saldo(pemilik, nominal,bahasa)
+                return True
             else:
                 print(f"\t\t{TEXT[bahasa]['nota_proses']}\n")
                 enter()
 
         case 0:
             print(f"\t{TEXT[bahasa]['left_tarik']}")
+            return False
             enter()
 
         case _:
