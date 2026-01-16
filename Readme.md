@@ -51,6 +51,15 @@ Saat pengguna melakukan perubahan PIN, sistem akan melakukan beberapa validasi:
 - Penyimpanan data menggunakan file JSON
 - Struktur kode modular dan mudah dipahami
 
+## Language Support
+This project implements a flexible language system using a centralized
+language dictionary.
+
+Supported languages:
+- Indonesian (`id`)
+- English (`en`)
+
+All user-facing texts are stored in:
 
 
 🗂 **Git Configuration**
@@ -111,3 +120,13 @@ Proyek Mini ATM Python ini dibuat sebagai latihan dan pembelajaran, dengan tujua
 - Penyimpanan data berbasis database
 - Mode admin untuk manajemen rekening
 - export riwayat transaksi ke file.txt
+
+
+## How to Run
+1. Make sure Python is installed.
+2. Clone this repository.
+3. Run the application:
+
+
+```bash
+python main.py
