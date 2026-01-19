@@ -17,15 +17,15 @@ def menu_transaksi(pemilik,data_rekening,bahasa):
         print("============================================")
         print(f"\t\t{TEXT[bahasa]['menu_title']} ")
         print("============================================")
-        print(f"\t\t\t\t{TEXT[bahasa]['menu_1']} \n")
-        print(f"\t\t\t\t{TEXT[bahasa]['menu_2']} \n")
-        print(f"\t\t\t\t{TEXT[bahasa]['menu_3']} \n")
-        print(f"\t\t\t\t{TEXT[bahasa]['menu_4']} \n")
-        print(f"\t\t\t\t{TEXT[bahasa]['menu_5']} \n")
+        print(f"\t\t\t\t{TEXT[bahasa]['menu_balance']} \n")
+        print(f"\t\t\t\t{TEXT[bahasa]['menu_withdraw']} \n")
+        print(f"\t\t\t\t{TEXT[bahasa]['menu_transfer']} \n")
+        print(f"\t\t\t\t{TEXT[bahasa]['menu_change_pin']} \n")
+        print(f"\t\t\t\t{TEXT[bahasa]['menu_history']} \n")
         print(f"\t\t\t\t{TEXT[bahasa]['menu_6']} \n")
  
         try:
-            pilih_transaksi=int(input(f"\t\t{TEXT[bahasa]['choice']} : "))
+            pilih_transaksi=int(input(f"\t\t{TEXT[bahasa]['choice_input']} : "))
         except ValueError:
             print(f"\t{TEXT[bahasa]['input_eror']} \n")
             enter()
@@ -63,7 +63,7 @@ def menu_transaksi(pemilik,data_rekening,bahasa):
                 enter()
 
             case 6:
-                print(f"\n\n\n\t\t {TEXT[bahasa]['out']} \n\n")
+                print(f"\n\n\n\t\t {TEXT[bahasa]['exit_message']} \n\n")
                 break
 
             case _:
@@ -73,7 +73,7 @@ def menu_transaksi(pemilik,data_rekening,bahasa):
         
         if not tanya_lanjutkan():
             clear()
-            print(f"\n\t\t  {TEXT[bahasa]['out']}\n")
+            print(f"\n\t\t  {TEXT[bahasa]['exit_message']}\n")
             break
 
 
