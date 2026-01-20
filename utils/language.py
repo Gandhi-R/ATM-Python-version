@@ -25,6 +25,7 @@ TEXT = {
         "withdraw_input": "MASUKKAN PILIHAN PENARIKAN : ",
         "withdraw_cancelled": "ANDA MEMBATALKAN TRANSAKSI",
         "transaction_failed": "MAAF, TRANSAKSI TIDAK DAPAT DIPROSES",
+        "transaction_left":"ANDA KELUAR PROGRAM",
 
         # ===== WITHDRAW RESULT =====
         "balance_not_enough": "MAAF, SALDO ANDA KURANG",
@@ -104,6 +105,7 @@ TEXT = {
         "withdraw_input": "ENTER WITHDRAWAL OPTION : ",
         "withdraw_cancelled": "TRANSACTION CANCELLED",
         "transaction_failed": "SORRY, TRANSACTION CANNOT BE PROCESSED",
+        "transaction_left":"YOUR EXIT IN THE PROGRAM",
 
         # ===== WITHDRAW RESULT =====
         "balance_not_enough": "SORRY, YOUR BALANCE IS NOT ENOUGH",

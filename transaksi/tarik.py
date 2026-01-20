@@ -7,7 +7,7 @@ from utils.language import TEXT
 def hitung_tarik_saldo(pemilik,nominal,bahasa):
     if pemilik['saldo']<nominal:
 
-        print(f"\n\t\n{TEXT[bahasa]['min_saldo']} ") 
+        print(f"\n\t\n{TEXT[bahasa]['balance_not_enough']} ") 
 
     else:
         pemilik['saldo'] -= nominal
@@ -18,22 +18,23 @@ def hitung_tarik_saldo(pemilik,nominal,bahasa):
             nominal,
             f"Sisa saldo : Rp.{pemilik['saldo']}")
 
-        print(f"\n\t{TEXT[bahasa]['inpo_saldo']} Rp.{nominal}\n         {TEXT[bahasa]['sisa']} Rp.{pemilik['saldo']}\n\n")
-        pilih=input(f"   {TEXT[bahasa]['struk']} (Y/N) : ").upper()
+        print(f"\n\t{TEXT[bahasa]['withdraw_succes']} : Rp.{nominal}\n         {TEXT[bahasa]['sisa']} Rp.{pemilik['remaining_balance']}\n\n")
+        pilih=input(f"   {TEXT[bahasa]['print_receipt']} (Y/N) : ").upper()
         if pilih=="Y":
             cetak_tarik_saldo(pemilik,nominal,bahasa)
-            print(f"\n   {TEXT[bahasa]['valid_saldo']} \n")
+            print(f"\n   {TEXT[bahasa]['receipted_printed']} \n")
         enter()
 
 
 
 def tarik_saldo(pemilik,bahasa):
-    print(f"\n\n            \t{TEXT[bahasa]['menu_tarik']}      \n\n\n")
+    print(f"\n\n            \t{TEXT[bahasa]['withdraw_menu']}      \n\n\n")
     print("\t1. Rp.100.000                          4. Rp.500.000\n")
     print("\t2. Rp.200.000                          5. Rp.1.000.000\n")
     print("\t3. Rp.300.000                          6. NOMINAL LAIN\n\n\n")
-    print(f"\t\t\t{TEXT[bahasa]['note_tarik']}\n\n")
-    pilih=(int(input(TEXT[bahasa]['input_tarik'])))
+    print(f"\t\t\t{TEXT[bahasa]['withdraw_note']}\n")
+    print(f"\t\t\t{TEXT[bahasa]['withdraw_cancel_note']}\n")
+    pilih=(int(input(TEXT[bahasa]['withdraw_input'])))
 
     match pilih:
         case 1: 
@@ -56,7 +57,7 @@ def tarik_saldo(pemilik,bahasa):
             try:
                 nominal = int(input("\t\t\t  Rp."))
             except ValueError:
-                print(f"\t\t{TEXT[bahasa]['invalid_input']}.")
+                print(f"\t\t{TEXT[bahasa]['transaction_failed']}.")
                 enter() 
                 return
 
@@ -64,11 +65,11 @@ def tarik_saldo(pemilik,bahasa):
                 hitung_tarik_saldo(pemilik, nominal,bahasa)
                 return True
             else:
-                print(f"\t\t{TEXT[bahasa]['nota_proses']}\n")
+                print(f"\t\t{TEXT[bahasa]['transaction_failed']}\n")
                 enter()
 
         case 0:
-            print(f"\t{TEXT[bahasa]['left_tarik']}")
+            print(f"\t{TEXT[bahasa]['transaction_left']}")
             return False
             enter()
 
