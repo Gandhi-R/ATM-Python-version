@@ -53,7 +53,7 @@ def tarik_saldo(pemilik,bahasa):
             hitung_tarik_saldo(pemilik,1000000,bahasa)
             return True
         case 6: 
-            print(f"\n\n\t\t{TEXT[bahasa]['note_tarik']} \n")
+            print(f"\n\n\t\t{TEXT[bahasa]['withdraw_note']} \n")
             try:
                 nominal = int(input("\t\t\t  Rp."))
             except ValueError:

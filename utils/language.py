@@ -212,6 +212,22 @@ TEXT = {
         "print_succes":"STRUK ANDA SEDANG DICETAK. SILAHKAN AMBIL STRUK ANDA DI NOTEPAD",
         "false_transaction":"MAAF TRANSAKSI TIDAK DAPAT DIPROSES.",
 
+        
+        # ===== TRANSFER =====
+        "transfer_title": "TRANSFER SALDO KE REKENING LAIN",
+        "transfer_cancel_note": "INPUT ANGKA 0 \n \t UNTUK MEMBATALKAN TRANSAKSI",
+        "transfer_input_account": "MASUKKAN NOMOR REKENING TUJUAN",
+        "transfer_invalid_account": "NOMOR REKENING HANYA BOLEH BERISI ANGKA",
+        "transfer_same_account": "REKENING TUJUAN TIDAK BOLEH SAMA DENGAN REKENING ANDA",
+        "transfer_account_not_found": "NOMOR REKENING TIDAK DITEMUKAN",
+        "transfer_registered_account": "REKENING TERDAFTAR",
+        "account_owner": "NAMA PEMILIK",
+        "account_number": "NOMOR REKENING",
+        "transfer_nominal_note": "NOMINAL HARUS KELIPATAN Rp.50.000 DAN MAKSIMAL Rp.2.500.000",
+        "transfer_input_nominal": "MASUKKAN NOMINAL TRANSFER : Rp.",
+        "transfer_success": "TRANSFER BERHASIL",
+        "transfer_remaining_balance": "SISA SALDO ANDA SAAT INI Rp.",
+
 
         #ganti pin
         "ganti":"GANTI PIN",
