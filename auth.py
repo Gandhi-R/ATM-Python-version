@@ -106,9 +106,9 @@ def ganti_pin(pemilik,bahasa):
     while total_coba < 3:
         clear()
         print("========================================")
-        print(f"                {TEXT[bahasa]['ganti']}")
+        print(f"                {TEXT[bahasa]['change_pin_title']}")
         print("========================================\n")
-        print(f"\t   {TEXT[bahasa]['input_pin']}\n\n", end="\t\t ", flush=True)
+        print(f"\t   {TEXT[bahasa]['old_pin_input']}\n\n", end="\t\t ", flush=True)
         pin_input = ""
 
         while True:
@@ -124,18 +124,18 @@ def ganti_pin(pemilik,bahasa):
                 print("*", end="", flush=True)
 
         if len(pin_input) != 6:
-            print(f"\n\n{TEXT[bahasa]['min6']}")
+            print(f"\n\n{TEXT[bahasa]['pin_length_error']}")
             enter()
             continue
         if pin_input!=pin_benar:
             total_coba+=1
-            print(f"\t{TEXT[bahasa]['if_salah']} : {3-total_coba}")
+            print(f"\t{TEXT[bahasa]['wrong_pin']} : {3-total_coba}")
             enter()
             continue
 
         #jika pin lama benar 
         clear()
-        print(f"\t\t {TEXT[bahasa]['pin_baru']}\n\n", end="\t\t ", flush=True)
+        print(f"\t\t {TEXT[bahasa]['new_pin_input']}\n\n", end="\t\t ", flush=True)
 
         pin_baru = ""
 
@@ -153,17 +153,17 @@ def ganti_pin(pemilik,bahasa):
 
             
         if len(pin_baru) != 6:
-            print(f"\t{TEXT[bahasa]['min6']}")
+            print(f"\t{TEXT[bahasa]['pin_length_error']}")
             enter()
             continue
 
         if pin_baru == pin_benar:
-            print(f"\t{TEXT[bahasa]['pin_sama']}")
+            print(f"\t{TEXT[bahasa]['same_pin_error']}")
             enter()
             continue
 
         if cek_pin_lemah(pin_baru):
-            print(f"\t{TEXT[bahasa]['pin_lemah']}")
+            print(f"\t{TEXT[bahasa]['weak_pin']}")
             enter()
             continue
 
@@ -171,7 +171,7 @@ def ganti_pin(pemilik,bahasa):
 
         #konfirmasi
         clear()
-        print(f"\t{TEXT[bahasa]['pin_konfir']}\n\n", end="\t\t ", flush=True)
+        print(f"\t{TEXT[bahasa]['confirm_pin']}\n\n", end="\t\t ", flush=True)
         konfirmasi=""
 
         while True:
@@ -187,17 +187,17 @@ def ganti_pin(pemilik,bahasa):
                 print("*",end="",flush=True)
 
         if konfirmasi!=pin_baru:
-            print(f"\t {TEXT[bahasa]['not_cocok']}")
+            print(f"\t {TEXT[bahasa]['pin_not_match']}")
             enter()
             continue
 
         #JIKA BERHASIL
         pemilik['pin']=pin_baru
-        print(f"\n\t{TEXT[bahasa]['true_pin']}")
+        print(f"\n\t{TEXT[bahasa]['pin-changed']}")
         enter()
         return True  
     
-    print(f"\n {TEXT[bahasa]['blok_pin']}")
+    print(f"\n {TEXT[bahasa]['pin_blocked']}")
     enter()
     return False
 
