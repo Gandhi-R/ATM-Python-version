@@ -22,7 +22,7 @@ def menu_transaksi(pemilik,data_rekening,bahasa):
         print(f"\t\t\t\t{TEXT[bahasa]['menu_transfer']} \n")
         print(f"\t\t\t\t{TEXT[bahasa]['menu_change_pin']} \n")
         print(f"\t\t\t\t{TEXT[bahasa]['menu_history']} \n")
-        print(f"\t\t\t\t{TEXT[bahasa]['menu_6']} \n")
+        print(f"\t\t\t\t{TEXT[bahasa]['menu_exit']} \n")
  
         try:
             pilih_transaksi=int(input(f"\t\t{TEXT[bahasa]['choice_input']} : "))
