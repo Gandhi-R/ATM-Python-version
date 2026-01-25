@@ -2,15 +2,9 @@
     {
         "namaPemilik": "ARI",
         "nomorRekening": "111666",
-        "saldo": 1400000,
+        "saldo": 1300000,
         "pin": "123465",
         "history": [
-            {
-                "tanggal": "2025-12-24 23:33:54",
-                "jenis": "Transfer Keluar",
-                "nominal": 200000,
-                "keterangan": "Transfer ke IRFAN (818563)"
-            },
             {
                 "tanggal": "2025-12-27 17:47:32",
                 "jenis": "Tarik Tunai",
@@ -34,6 +28,12 @@
                 "jenis": "Tarik Tunai",
                 "nominal": 100000,
                 "keterangan": "Sisa saldo : Rp.1400000"
+            },
+            {
+                "tanggal": "Tanggal : 2026-01-25          Waktu : 19:25:32",
+                "jenis": "Tarik Tunai",
+                "nominal": 100000,
+                "keterangan": "Sisa saldo : Rp.1300000"
             }
         ]
     },

@@ -71,7 +71,7 @@ def menu_transaksi(pemilik,data_rekening,bahasa):
                 print(f"\n{TEXT[bahasa]["invalid_input"]}")
                 enter()
         
-        if not tanya_lanjutkan():
+        if not tanya_lanjutkan(bahasa):
             clear()
             print(f"\n\t\t  {TEXT[bahasa]['exit_message']}\n")
             break
