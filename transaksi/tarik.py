@@ -18,7 +18,7 @@ def hitung_tarik_saldo(pemilik,nominal,bahasa):
             nominal,
             f"Sisa saldo : Rp.{pemilik['saldo']}")
 
-        print(f"\n\t{TEXT[bahasa]['withdraw_succes']} : Rp.{nominal}\n         {TEXT[bahasa]['sisa']} Rp.{pemilik['remaining_balance']}\n\n")
+        print(f"\n\t{TEXT[bahasa]['withdraw_success']} : Rp.{nominal}\n         {TEXT[bahasa]['sisa']} Rp.{pemilik['remaining_balance']}\n\n")
         pilih=input(f"   {TEXT[bahasa]['print_receipt']} (Y/N) : ").upper()
         if pilih=="Y":
             cetak_tarik_saldo(pemilik,nominal,bahasa)

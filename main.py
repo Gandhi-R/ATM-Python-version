@@ -27,7 +27,7 @@ def menu_transaksi(pemilik,data_rekening,bahasa):
         try:
             pilih_transaksi=int(input(f"\t\t{TEXT[bahasa]['choice_input']} : "))
         except ValueError:
-            print(f"\t{TEXT[bahasa]['input_eror']} \n")
+            print(f"\t{TEXT[bahasa]['input_error']} \n")
             enter()
             continue
 
@@ -35,7 +35,7 @@ def menu_transaksi(pemilik,data_rekening,bahasa):
         match pilih_transaksi:
             case 1:
                 clear()
-                print(f"\n\n\t\t{TEXT[bahasa]['info_saldo']}  : Rp.{pemilik['saldo']}\n")
+                print(f"\n\n\t\t{TEXT[bahasa]['current_balance']}  : Rp.{pemilik['saldo']}\n")
                 print(f"\n\t {TEXT[bahasa]['press_enter']}")
                 enter()
                 

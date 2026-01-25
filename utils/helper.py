@@ -1,8 +1,9 @@
+from utils.language import TEXT
 
-def tanya_lanjutkan():
+def tanya_lanjutkan(bahasa):
     while True:
-        pilihan = input("\n\t APAKAH INGIN MELAKUKAN TRANSAKSI LAIN? (Y/N): ").strip().upper()
+        pilihan = input(f"\n\t {TEXT[bahasa]['continue_transaction']} ").strip().upper()
         if pilihan in ["Y", "N"]:
             return pilihan == "Y"  # return True kalau Y, False kalau N
         else:
-            print("\n PILIHAN TIDAK VALID. SILAHKAN MASUKKAN Y ATAU N.")
+            print(f"\n {TEXT[bahasa]['invalid_yes_no']}")

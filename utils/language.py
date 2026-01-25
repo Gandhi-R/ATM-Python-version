@@ -78,6 +78,12 @@ TEXT = {
         "receiver_account": "NO REKENING PENERIMA",
         "sender_balance": "SALDO PENGIRIM",
         "receiver_balance": "SALDO PENERIMA",
+
+        #continue
+        "continue_transaction":"APAKAH INGIN MELAKUKAN TRANSAKSI LAIN? (Y/N):",
+        "invalid_yes_no": "PILIHAN TIDAK VALID. SILAHKAN MASUKKAN Y ATAU N.",
+
+        
     },
 
     "en": {
@@ -151,6 +157,10 @@ TEXT = {
         "receipt_balance": "REMAINING BALANCE",
         "receipt_note_1": "KEEP THIS RECEIPT",
         "receipt_note_2": "AS LEGAL PROOF",
+
+        #continnue
+        "continue_transaction":"DO YOU WANT TO MAKE ANOTHER TRANSACTION? (Y/N):",
+        "invalid_yes_no": "INVALID CHOICE. PLEASE ENTER Y OR N.",
     }
 }
 
